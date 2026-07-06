@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Tickets</title>
+</head>
+
+<body>
+    <h1>Book Tickets</h1>
+    <p>You are booking Summer Music Festival.</p>
+
+    <form action="/book" method="post">
+        <p>
+            <label for="name">Your name:</label>
+            <input type="text" id="name" name="name" required>
+        </p>
+
+        <p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </p>
+
+        <p>
+            <label for="tickets">Number of tickets:</label>
+            <input type="number" id="tickets" min="1" name="tickets" required>
+        </p>
+
+        <button type="submit">Submit booking</button>
+    </form>
+
+    <a href="/">Back to home</a>
+</body>
+</html>
