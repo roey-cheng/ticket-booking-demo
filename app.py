@@ -20,7 +20,21 @@ def book():
         email = request.form["email"]
         tickets = request.form["tickets"]
 
-        return f"Hello, {name}! You requested {tickets} ticket(s). We would send confirmation to {email}."
+        params = {
+            "from": "Ticket Booking Demo <tickets@mail.chruyi.com>",
+            "to": [email],
+            "subject": "Your ticket booking confirmation",
+            "html": f"""
+                <h1>Booking received!</h1>
+                <p>Hi {name},</p>
+                <p>You requested {tickets} ticket(s) for Summer Music Festival.</p>
+            """
+        }
+
+        resend.Emails.send(params)
+
+        return f"Hello, {name}! Your booking confirmation was sent to {email}."
+    
     return render_template("book.html")
 
 if __name__ == "__main__":
